@@ -22,25 +22,25 @@
 
 let good = 0;
 let oops = 0;
-let useImage=1;
+let image=1;
 function  checkAuthor(){
     password = document.getElementById("secretauthorname").value
     guess = document.getElementById("guessname").value
     if(password == guess) {
-        good = good + 1;
-        alert("You got it right");
+        good++;
+        alert("Correct");
         //document.getElementById("result").innerHTML=good;
     } else {
         if(oops==10){
-        alert("Sorry, ran out of guesses")
+        alert("Sorry")
       }
       else{
-        oops = oops+1;
+        oops++;
         alert("Sorry")
         document.getElementById("result").innerHTML=oops;
       }
     }
-    document.getElementById("result").innerHTML='Right count : ' + good + 'Wrong count : ' + oops;
+    document.getElementById("result").innerHTML='Right: ' + good + 'Wrong: ' + oops;
 }
 </script>
 
