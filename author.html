@@ -24,23 +24,20 @@ let oops=0;
 
 function checkAuthor() {
     console.log("Getting form values")
-    Authorname = document.getElementById("secretAuthorName").value
-    Guessauthor= document.getElementById("guessAuthorName").value
+    Authorname = document.getElementById("secret_author_name").value
+    Guessauthor= document.getElementById("guess_author_name").value
     out = document.getElementById("result")
     if(secretAuthorName==guessAuthorName){
 	good++;
 	alert("You got it right")
+    out.innerHTML=`Good: ${good}`;
 }
 else{
 	oops++;
 	alert("Sorry");
+    out.innerHTML=`Oops: ${oops}`;
+
 }
-updateResults();
-}
-function updateResults() {
-    const resultElement = document.getElementById('result');
-    resultElement.innerHTML = `Good: ${good}, Oops: ${oops}`;
-  }
 </script>
 
 </body>
