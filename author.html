@@ -30,13 +30,12 @@ function checkAuthor() {
     if(secretAuthorName==guessAuthorName){
 	good++;
 	alert("You got it right")
-    out.innerHTML=`Good: ${good}`;
-}
+  }
 else{
 	oops++;
 	alert("Sorry");
-    out.innerHTML=`Oops: ${oops}`;
-
+}
+document.getElementById("result").innerHTML='Right count : ' + good + ' Wrong count : ' + oops ;
 }
 </script>
 
