@@ -44,23 +44,39 @@
 
             resultElement.innerHTML = `Good: ${good}, Oops: ${oops}`;
         }
-        function selectImage(){
-        switch (useImage){
-        case 1: 
-        document.getElementById("Image").src= "hyd.jpg";
-        useImage=2;
-        break;
-        case 2: 
-        document.getElementById("Image").src="vizag.jpg";
-        useImage=3;
-        break;
-        case 3: 
-        document.getElementById("Image").src="mumbai.jpg";
-        useImage=1;
-        break;
+        let useImage = 1;
+
+function selectImage() {
+        
+        const imageElement = document.getElementById("mumbai");
+
+        switch (useImage) {
+            case 1:
+              
+                imageElement.src = "Hyd.jpg";
+               
+                useImage = 2;
+                break;
+            case 2:
+              
+                imageElement.src = "vizag.jpg";
+                useImage = 3;
+                break;
+            case 3:
+                imageElement.src = "mumbai.jpg";
+                useImage = 1;
+                break;
+            default:
+                break;
             }
         }
     </script>
+    
+<div>
+    <img src="mumbai.jpg" id="mumbai" height=100 width=100 alt="city mumbai" onclick="selectImage()">
+</div>
+
+
 </body>
 </html>
 
