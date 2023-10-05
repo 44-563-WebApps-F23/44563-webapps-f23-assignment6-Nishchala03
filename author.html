@@ -47,23 +47,26 @@
         let useImage = 1;
 
         function selectImage() {
-            const cityImage = document.getElementById("city-image");
+             const imageElement = document.getElementById("cities");
 
-            switch (useImage) {
-                case 1:
-                    cityImage.src = "img2.jpg";
-                    useImage = 2;
-                    break;
-                case 2:
-                    cityImage.src = "img3.jpg";
-                    useImage = 3;
-                    break;
-                case 3:
-                    cityImage.src = "img1.jpg";
-                    useImage = 1;
-                    break;
-                default:
-                    break;
+        switch (useImage) {
+            case 1:
+              
+                imageElement.src = "img1.jpg";
+               
+                useImage = 2;
+                break;
+            case 2: 
+              
+                imageElement.src = "img2.jpg";
+                useImage = 3;
+                break;
+            case 3:
+                imageElement.src = "img3.jpg";
+                useImage = 1;
+                break;
+            default:
+                break;
             }
         }
     </script>
