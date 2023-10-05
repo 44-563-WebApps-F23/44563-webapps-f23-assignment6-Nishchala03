@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
  <title>Author</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <body>
 <head>Author entry nishchala</head>
 <h2>Getting input</h2> 
@@ -23,6 +25,13 @@
         <input type="button" value="Check the guess" onclick="checkAuthor()"><br><br>
 
         <p id="result">Good: 0, Oops: 0</p>
+        <div class=" alert-warning mt-2" id="incorrectAnswer" style="display:none;">
+            Incorrect Guesses: <span id="incorrectCount">0</span>
+        </div>
+        
+        <div class=" alert-info mt-2" id="outOfGuesses" style="display:none;">
+            Sorry, ran out of guesses.
+        </div>
     </form>
 
     <script>
@@ -40,6 +49,17 @@
             } else {
                 oops++;
                 alert("Sorry!");
+                incorrectCount++
+        document.getElementById("incorrectCount").textContent = incorrectCount;
+                if (incorrectCount === 7) {
+                    document.getElementById("outOfGuesses").style.display = "block";
+                    document.getElementById("checkGuessButton").onclick = function () {
+                        alert("Sorry, ran out of guesses.");
+                    };
+                } else {
+                    document.getElementById("incorrectAnswer").style.display = "block";
+                }
+
             }
 
             resultElement.innerHTML = `Good: ${good}, Oops: ${oops}`;
@@ -76,13 +96,6 @@ function selectImage() {
     <img src="mumbai.jpg" id="mumbai" height=100 width=100 alt="city mumbai" onclick="selectImage()">
 </div>
 
-
-</body>
-</html>
-
-    </script>
-</body>
-</html>
 
 </body>
 </html> 
